@@ -14,10 +14,17 @@
   <script type="text/javascript" src="js/directives.js"></script>
   <script type="text/javascript" src="js/filters.js"></script>
 
+  <header><h1>Header</h1></header>
+  <div class="content">
+    <div ng-view></div>
+  </div>
+
   <div ng-controller="MainController">
     <div ng-repeat="article in articles">
       <img ng-src="{{article.data.thumbnail}}"> <a href="http://reddit.com{{article.data.permalink}}">{{article.data.title}}</a> <button ng-click="up(article.id)">Up</button> <button ng-click="down(article.id)">Down</button> Score: {{article.score}}
     </div>
   </div>
+
+  <footer><h5>Footer</h5></footer>
 </body>
 </html>

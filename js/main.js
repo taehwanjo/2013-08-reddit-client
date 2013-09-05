@@ -1,4 +1,20 @@
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', ['ngRoute']);
+
+app.config(['$routeProvider', function($routeProvider){
+  $routeProvider.when('/', {
+    controller:'MainController',
+    template: '<h2>We are home</h2>'
+  })
+  .when('/login', {
+    controller: 'LoginController', 
+    template: '<h2>Login</h2>'
+  })
+  .otherwise({redirectTo: '/'});
+}]);
+
+app.controller('LoginController', function(){
+
+});
 
 app.controller('MainController', ['$scope', '$http', function($scope, $http) {
   $scope.score = {};
